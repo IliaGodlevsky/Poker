@@ -9,6 +9,7 @@ Deck::Deck() : cardsGave(0U)
 	{
 		cards.push_back(card);
 	}
+	cards.push_back(Card::BIGGEST_CARD);
 }
 
 void Deck::shuffle()
@@ -28,7 +29,7 @@ const Card& Deck::getCard()
 
 bool Deck::isEmpty()const
 {
-	return cardsGave == MAX_DECK_SIZE - 1;
+	return cardsGave > MAX_DECK_SIZE - 1;
 }
 
 void Deck::reset()
@@ -51,7 +52,7 @@ std::vector<const Card*> Deck::getCards(unsigned numberOfCards)
 	}
 
 	std::vector<const Card*> collection;
-	for (int i = 0; i < numberOfCards; i++)
+	for (unsigned i = 0; i < numberOfCards; i++)
 	{
 		auto card = &getCard();
 		collection.push_back(card);
