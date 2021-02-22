@@ -29,10 +29,7 @@ void Table::showCards(std::ostream& os)const
 		os << "Hand:  " << hands[i] << std::endl;
 		combo = combinator.getCombo(river, hands[i]);
 		if (nullptr != combo)
-		{
-			os << "Combo: " << *combo << "(" 
-				<< combo->getName() << ")" << std::endl;
-		}
+			os << "Combo: " << *combo << "[" << combo->getName() << "]\n";
 		os << std::endl;
 	}
 }
