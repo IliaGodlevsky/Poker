@@ -34,16 +34,13 @@ std::string convertSuitToString(unsigned suit)
 	}
 }
 
-Card Card::DEFAULT_CARD = Card();
-Card Card::BIGGEST_CARD = Card(Values::ACE, Suits::CLUBS);
-
 Card::Card() : Card(Values::TWO, Suits::DIAMONDS)
 {
 
 }
 
 Card::Card(unsigned cost, unsigned suit)
-	: cost(cost), suit(suit), isSuitUp(false)
+	: cost(cost), suit(suit)
 {
 
 }
@@ -53,24 +50,14 @@ bool Card::operator >(const Card& card)const
 	return cost > card.cost;
 }
 
-bool Card::operator <(const Card& card)const
+bool Card::operator < (const Card& card)const
 {
 	return cost < card.cost;
 }
 
-bool Card::operator >=(const Card& card)const
-{
-	return !(*this < card);
-}
-
-bool Card::operator<=(const Card& card)const
-{
-	return !(*this > card);
-}
-
 bool Card::operator==(const Card& card)const
 {
-	return cost == card.cost && suit == card.suit;
+	return cost == card.cost;
 }
 
 bool Card::operator!=(const Card& card)const
@@ -82,13 +69,13 @@ std::ostream& operator <<(std::ostream& os, const Card& card)
 {
 	std::string suitString = convertSuitToString(card.suit);
 	std::string costString = convertCostToString(card.cost);
-	os << "[" << costString << ":" << suitString << "]" << "  ";
+	os << "[" << costString << ":" << suitString << "]";
 	return os;
 }
 
 Card Card::operator++(int i)
 {
-	Card temp = *this;
+	auto temp = *this;
 	cost++;
 	if (cost > Values::ACE)
 	{
@@ -102,16 +89,27 @@ Card Card::operator++(int i)
 	return temp;
 }
 
-void Card::flip()
+
+bool Card::isPrevious(const Card& card)const
 {
-	if (isSuitUp)
+	if (card.cost == Values::TWO)
 	{
-		isSuitUp = false;
+		return cost == Values::ACE;
 	}
 	else
 	{
-		isSuitUp = true;
+		return cost == card.cost - 1;
 	}
+}
+
+int Card::getCost()const
+{
+	return cost;
+}
+
+int Card::getSuit()const
+{
+	return suit;
 }
 
 Card::~Card()

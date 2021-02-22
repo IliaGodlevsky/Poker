@@ -2,7 +2,15 @@
 #define CARD_H_
 
 #include <iostream>
+#include <vector>
 #include <string>
+#include <map>
+
+class Card;
+
+typedef std::vector<Card> Cards;
+typedef std::pair<int, Cards> Group;
+typedef std::map<int, Cards> Groups;
 
 enum Suits : unsigned
 {
@@ -32,8 +40,6 @@ enum Values : unsigned
 class Card
 {
 public:
-	static Card DEFAULT_CARD;
-	static Card BIGGEST_CARD;
 	Card();
 	Card(const Card&) = default;
 	Card(Card&&) = default;
@@ -44,14 +50,14 @@ public:
 	bool operator > (const Card&) const;
 	bool operator ==(const Card&) const;
 	bool operator !=(const Card&) const;
-	bool operator >=(const Card&) const;
-	bool operator <=(const Card&) const;
-	friend std::ostream& operator <<(std::ostream&, const Card&);
+	bool isPrevious(const Card& card)const;
+	friend std::ostream& operator 
+		<<(std::ostream&, const Card&);
 	Card operator++(int);
-	void flip();
+	int getCost()const;
+	int getSuit()const;
 	~Card();
 private:
-	bool isSuitUp;
 	unsigned cost;
 	unsigned suit;
 };

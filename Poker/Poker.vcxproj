@@ -140,14 +140,44 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Card.h" />
+    <ClInclude Include="Combination.h" />
+    <ClInclude Include="Combinator.h" />
     <ClInclude Include="Deck.h" />
+    <ClInclude Include="Flush.h" />
+    <ClInclude Include="FourOfAKind.h" />
+    <ClInclude Include="FullHouse.h" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="GroupCombination.h" />
     <ClInclude Include="Hand.h" />
+    <ClInclude Include="MultiGroupCombination.h" />
+    <ClInclude Include="OrderCombination.h" />
+    <ClInclude Include="Pair.h" />
+    <ClInclude Include="Straight.h" />
+    <ClInclude Include="StraightFlush.h" />
+    <ClInclude Include="Table.h" />
+    <ClInclude Include="Trips.h" />
+    <ClInclude Include="TwoPairs.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Card.cpp" />
+    <ClCompile Include="Combination.cpp" />
+    <ClCompile Include="Combinator.cpp" />
     <ClCompile Include="Deck.cpp" />
+    <ClCompile Include="Flush.cpp" />
+    <ClCompile Include="FourOfAKind.cpp" />
+    <ClCompile Include="FullHouse.cpp" />
+    <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="GroupCombination.cpp" />
     <ClCompile Include="Hand.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MultiGroupCombination.cpp" />
+    <ClCompile Include="OrderCombination.cpp" />
+    <ClCompile Include="Pair.cpp" />
+    <ClCompile Include="Straight.cpp" />
+    <ClCompile Include="StraightFlush.cpp" />
+    <ClCompile Include="Table.cpp" />
+    <ClCompile Include="Trips.cpp" />
+    <ClCompile Include="TwoPairs.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

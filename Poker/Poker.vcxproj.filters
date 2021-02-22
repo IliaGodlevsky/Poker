@@ -13,30 +13,138 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Combinations">
+      <UniqueIdentifier>{a3a0c326-7b72-4bb1-9d3a-d702d13d2a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Combinations">
+      <UniqueIdentifier>{d8948091-248e-482b-80b7-b4c0eaa092f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Combinations\Abstract">
+      <UniqueIdentifier>{d78d66a5-b313-430f-b5b0-4e98790e8636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Combinations\Abstract">
+      <UniqueIdentifier>{f9d696d3-6019-4d38-88aa-d91bcfddb365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{2dd4885a-9de3-4e34-a9d2-f27e358f6702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models">
+      <UniqueIdentifier>{5ae1f8de-7cc7-47c5-ba93-16298e527cc1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Card.h">
+    <ClInclude Include="StraightFlush.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Deck.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FourOfAKind.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="Flush.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="Straight.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="FullHouse.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="Pair.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoPairs.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="Trips.h">
+      <Filter>Header Files\Combinations</Filter>
+    </ClInclude>
+    <ClInclude Include="Combination.h">
+      <Filter>Header Files\Combinations\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupCombination.h">
+      <Filter>Header Files\Combinations\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiGroupCombination.h">
+      <Filter>Header Files\Combinations\Abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderCombination.h">
+      <Filter>Header Files\Combinations\Abstract</Filter>
     </ClInclude>
     <ClInclude Include="Hand.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Deck.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Combinator.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>Header Files\Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Card.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Deck.cpp">
+    <ClCompile Include="StraightFlush.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FourOfAKind.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="Flush.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="FullHouse.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="Straight.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="Pair.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoPairs.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="Trips.cpp">
+      <Filter>Source Files\Combinations</Filter>
+    </ClCompile>
+    <ClCompile Include="Combination.cpp">
+      <Filter>Source Files\Combinations\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupCombination.cpp">
+      <Filter>Source Files\Combinations\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiGroupCombination.cpp">
+      <Filter>Source Files\Combinations\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="OrderCombination.cpp">
+      <Filter>Source Files\Combinations\Abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="Card.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Combinator.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
     <ClCompile Include="Hand.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Deck.cpp">
+      <Filter>Source Files\Models</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

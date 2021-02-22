@@ -1,19 +1,20 @@
 #include <ctime>
+#include <cstdlib>
 
-#include "Deck.h"
+#include "Table.h"
 
 int main()
 {
-	std::srand((unsigned)std::time(nullptr));
-	Deck deck;
-	deck.shuffle();
-	const int CARDS_TO_TAKE = 52;
-	auto cards = deck.getCards(CARDS_TO_TAKE);
-
-	for (int i = 0; i < CARDS_TO_TAKE; i++)
+	auto seed = std::time(nullptr);
+	std::srand(unsigned(seed));
+	const int HANDS = 1;
+	Table table(HANDS);
+	while (true)
 	{
-		if (i % 4 == 0 && i != 0)
-			std::cout << std::endl;
-		std::cout << *cards[i];
+		table.deal();
+		table.showCards(std::cout);
+		system("pause");
+		system("cls");
+		table.reset();
 	}
 }

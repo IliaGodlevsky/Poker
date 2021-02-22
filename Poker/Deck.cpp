@@ -5,11 +5,11 @@
 
 Deck::Deck() : cardsGave(0U)
 {	
-	for (auto card = Card::DEFAULT_CARD; card != Card::BIGGEST_CARD; card++)
+	Card card;
+	for (int i = 0; i < MAX_DECK_SIZE; i++)
 	{
-		cards.push_back(card);
+		cards.push_back(card++);
 	}
-	cards.push_back(Card::BIGGEST_CARD);
 }
 
 void Deck::shuffle()
@@ -17,7 +17,7 @@ void Deck::shuffle()
 	std::random_shuffle(cards.begin(), cards.end());
 }
 
-const Card& Deck::getCard()
+Card Deck::getCard()
 {
 	if (!isEmpty())
 	{
@@ -39,23 +39,20 @@ void Deck::reset()
 
 Hand Deck::getHand()
 {
-	auto &card1 = getCard();
-	auto &card2 = getCard();
-	return Hand(card1, card2);
+	return Hand(getCard(), getCard());
 }
 
-std::vector<const Card*> Deck::getCards(unsigned numberOfCards)
+Cards Deck::getCards(unsigned numberOfCards)
 {
 	if (numberOfCards > MAX_DECK_SIZE)
 	{
 		numberOfCards = MAX_DECK_SIZE;
 	}
 
-	std::vector<const Card*> collection;
+	Cards collection;
 	for (unsigned i = 0; i < numberOfCards; i++)
 	{
-		auto card = &getCard();
-		collection.push_back(card);
+		collection.push_back(getCard());
 	}
 	return collection;
 }

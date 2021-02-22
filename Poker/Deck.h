@@ -10,17 +10,24 @@
 class Deck
 {
 private:
-	enum : unsigned { MAX_DECK_SIZE = 52, CARDS_IN_FLOP = 3, CARDS_IN_RIVER = 5 };
+	enum : unsigned 
+	{ 
+		MAX_DECK_SIZE = 52
+	};
 public:	
 	Deck();
-	std::vector<const Card*> getCards(unsigned numberOfCards);
-	const Card& getCard();
+	Deck(const Deck&) = default;
+	Deck(Deck&&) = default;
+	Deck& operator=(const Deck&) = default;
+	Deck& operator=(Deck&&) = default;
+	Cards getCards(unsigned numberOfCards);
+	Card getCard();
+	Hand getHand();
 	void shuffle();
 	void reset();
-	Hand getHand();
 	bool isEmpty()const;
 private:	
-	std::vector<Card> cards;
+	Cards cards;
 	unsigned cardsGave;
 };
 #endif
