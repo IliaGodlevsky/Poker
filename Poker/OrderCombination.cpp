@@ -23,7 +23,7 @@ bool OrderCombination::hasCombination(Cards& cards)
 {
 	size_t required = (size_t)getRequiredCardsForCombo();
 	size_t limit = cards.size() - required + 1;
-	for (int i = 0; i < limit; i++)
+	for (int i = 0; i <= limit; i++)
 	{
 		if (isOrdered(cards))
 			return true;
