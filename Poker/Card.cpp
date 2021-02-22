@@ -4,19 +4,19 @@ std::string convertCostToString(unsigned cost)
 {
 	switch (cost)
 	{
-	case Values::TWO:	return "2 ";
-	case Values::THREE: return "3 ";
-	case Values::FOUR:	return "4 ";
-	case Values::FIVE:	return "5 ";
-	case Values::SIX:	return "6 ";
-	case Values::SEVEN: return "7 ";
-	case Values::EIGHT: return "8 ";
-	case Values::NINE:	return "9 ";
+	case Values::TWO:	return "2";
+	case Values::THREE: return "3";
+	case Values::FOUR:	return "4";
+	case Values::FIVE:	return "5";
+	case Values::SIX:	return "6";
+	case Values::SEVEN: return "7";
+	case Values::EIGHT: return "8";
+	case Values::NINE:	return "9";
 	case Values::TEN:	return "10";
-	case Values::JACK:	return "J ";
-	case Values::QUEEN: return "Q ";
-	case Values::KING:	return "K ";
-	case Values::ACE:	return "A ";
+	case Values::JACK:	return "J";
+	case Values::QUEEN: return "Q";
+	case Values::KING:	return "K";
+	case Values::ACE:	return "A";
 	default: throw std::exception();
 	}
 }
@@ -69,7 +69,7 @@ std::ostream& operator <<(std::ostream& os, const Card& card)
 {
 	std::string suitString = convertSuitToString(card.suit);
 	std::string costString = convertCostToString(card.cost);
-	os << "[" << costString << ":" << suitString << "]";
+	os << "[" << costString << ":" << suitString << "] ";
 	return os;
 }
 
