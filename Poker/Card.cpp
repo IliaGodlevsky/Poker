@@ -34,6 +34,19 @@ std::string convertSuitToString(unsigned suit)
 	}
 }
 
+std::string convertSuitToString2(unsigned suit)
+{
+
+	switch (suit)
+	{
+	case Suits::CLUBS:		return "c";
+	case Suits::DIAMONDS:	return "d";
+	case Suits::HEARTS:		return "h";
+	case Suits::SPADES:		return "s";
+	default: throw std::exception();
+	}
+}
+
 Card::Card() : Card(Values::TWO, Suits::DIAMONDS)
 {
 
@@ -42,7 +55,7 @@ Card::Card() : Card(Values::TWO, Suits::DIAMONDS)
 Card::Card(unsigned cost, unsigned suit)
 	: cost(cost), suit(suit)
 {
-
+	displaySuit = convertSuitToString2;
 }
 
 bool Card::operator >(const Card& card)const
@@ -67,7 +80,7 @@ bool Card::operator!=(const Card& card)const
 
 std::ostream& operator <<(std::ostream& os, const Card& card)
 {
-	std::string suitString = convertSuitToString(card.suit);
+	std::string suitString = card.displaySuit(card.suit);
 	std::string costString = convertCostToString(card.cost);
 	os << "[" << costString << ":" << suitString << "] ";
 	return os;
