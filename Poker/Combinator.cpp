@@ -1,4 +1,12 @@
 #include "Combinator.h"
+#include "Pair.h"
+#include "TwoPairs.h"
+#include "Trips.h"
+#include "Straight.h"
+#include "Flush.h"
+#include "FullHouse.h"
+#include "FourOfAKind.h"
+#include "StraightFlush.h"
 
 Combinator::Combinator() : COMBOS(8)
 {
