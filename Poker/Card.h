@@ -56,6 +56,7 @@ public:
 	Card operator++(int);
 	int getCost()const;
 	int getSuit()const;
+	std::string(*displaySuit)(unsigned);
 	~Card();
 private:
 	unsigned cost;
@@ -64,4 +65,5 @@ private:
 
 std::string convertCostToString(unsigned cost);
 std::string convertSuitToString(unsigned suit);
+std::string convertSuitToString2(unsigned suit);
 #endif
