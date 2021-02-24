@@ -7,9 +7,11 @@ std::ostream& operator<<(std::ostream&os , const Combination& combo)
 	return os;
 }
 
-bool Combination::isRequiredGroup(const Group& group)const
+void Combination::prepareCards(const Cards& cards, const Hand& hand)
 {
-	return group.second.size() == getRequiredCardsForCombo();
+	comboCards = cards + hand;
+	comboCards = remove_duplicates(comboCards);
+	this->hand = &hand;
 }
 
 Combination::~Combination()

@@ -10,8 +10,7 @@ std::string Straight::getName()const
 
 bool Straight::tryDetectCombination(const Cards& cards, const Hand& hand)
 {
-	comboCards = cards + hand;
-	this->hand = &hand;
+	Combination::prepareCards(cards, hand);
 	Cards group = comboCards;
 	std::sort(group.begin(), group.end());
 	return OrderCombination::hasCombination(group);

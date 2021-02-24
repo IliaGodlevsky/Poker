@@ -15,7 +15,7 @@ public:
 	virtual std::string getName()const = 0;	
 	virtual ~Combination() = 0;
 protected:
-	bool isRequiredGroup(const Group&)const;
+	virtual void prepareCards(const Cards&, const Hand&);
 	virtual int getRequiredCardsForCombo()const = 0;
 	const Hand* hand;
 	Cards comboCards;

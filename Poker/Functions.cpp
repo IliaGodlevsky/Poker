@@ -28,3 +28,27 @@ void show(const Cards& cards, std::ostream& os)
 	for (auto& card : cards)
 		os << card;
 }
+
+bool isPrevious(const Card& first, const Card& second)
+{
+	return second.isPrevious(first);
+}
+
+Cards remove_duplicates(const Cards& cards)
+{
+	Cards temp;
+	auto grouped = group_by(cards, bySuit);
+	Groups groups;
+	for (auto it = grouped.begin(); it != grouped.end(); it++)
+	{
+		groups = group_by(it->second, byCost);
+		for (auto jt = groups.begin(); jt != groups.end(); jt++)
+		{
+			for (auto lt = jt->second.begin(); lt != jt->second.end(); lt++)
+			{
+				temp.push_back(*lt);
+			}
+		}
+	}
+	return temp;
+}

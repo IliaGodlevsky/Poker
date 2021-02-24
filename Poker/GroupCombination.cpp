@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <functional>
 
 #include "GroupCombination.h"
 #include "Functions.h"
@@ -7,8 +6,7 @@
 bool GroupCombination::tryDetectCombination(const Cards& cards, 
 	const Hand& hand, int(*selector)(const Card&))
 {
-	comboCards = cards + hand;
-	this->hand = &hand;
+	Combination::prepareCards(cards, hand);
 	bool isDetected = false;
 	auto groups = group_by(comboCards, selector);
 	int requiredCount = getRequiredCardsForCombo();

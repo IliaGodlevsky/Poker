@@ -9,7 +9,6 @@ public:
 	virtual ~OrderCombination() = 0;
 protected:
 	virtual bool hasCombination(Cards&);
-	virtual bool isOrdered(Cards&);
 };
 
 #endif

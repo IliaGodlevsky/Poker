@@ -55,7 +55,7 @@ Card::Card() : Card(Values::TWO, Suits::DIAMONDS)
 Card::Card(unsigned cost, unsigned suit)
 	: cost(cost), suit(suit)
 {
-	displaySuit = convertSuitToString2;
+	displaySuit = convertSuitToString;
 }
 
 bool Card::operator >(const Card& card)const

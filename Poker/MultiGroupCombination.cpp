@@ -5,8 +5,7 @@
 
 bool MultiGroupCombination::tryDetectCombination(const Cards& cards, const Hand& hand)
 {
-	comboCards = cards + hand;
-	this->hand = &hand;
+	Combination::prepareCards(cards, hand);
 	bool isDetected = false;
 
 	auto groups = group_by(comboCards, byCost);
@@ -24,9 +23,8 @@ bool MultiGroupCombination::tryDetectCombination(const Cards& cards, const Hand&
 	if (firstGroupPair != groups.rend() &&  secondGroupPair != groups.rend())
 	{
 		comboCards = firstGroupPair->second;
-		auto inserter = std::back_insert_iterator<Cards>(comboCards);
 		std::copy(secondGroupPair->second.begin(),
-			secondGroupPair->second.end(), inserter);
+			secondGroupPair->second.end(), std::back_inserter<Cards>(comboCards));
 		std::sort(comboCards.begin(), comboCards.end());
 		isDetected = true;
 	}

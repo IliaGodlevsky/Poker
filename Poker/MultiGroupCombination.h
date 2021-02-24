@@ -3,7 +3,7 @@
 
 #include "GroupCombination.h"
 
-class MultiGroupCombination : public GroupCombination
+class MultiGroupCombination : virtual public GroupCombination
 {
 public:
 	bool tryDetectCombination(const Cards&, const Hand&) override;
